@@ -952,7 +952,7 @@ exports.getAllUserLabTestAppointments = async (req, res) => {
 
 exports.paymentSuccessCallbackUrlForAppointment = async (req, res) => {
   try {
-    res.redirect("https://bookmydoct-fe-v2.vercel.app/myAppointments");
+    res.redirect("https://www.bookmydoct.com/myAppointments");
   } catch (error) {
     console.log(error);
     res
@@ -963,7 +963,7 @@ exports.paymentSuccessCallbackUrlForAppointment = async (req, res) => {
 
 exports.paymentSuccessCallbackUrlForLabTest = async (req, res) => {
   try {
-    res.redirect("https://bookmydoct-fe-v2.vercel.app/labTestBookings");
+    res.redirect("https://www.bookmydoct.com/bookedLabTest");
   } catch (error) {
     console.log(error);
     res
