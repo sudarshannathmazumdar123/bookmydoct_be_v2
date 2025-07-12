@@ -27,6 +27,7 @@ app.use(express.json({ limit: "50mb" }));
 //   });
 
 // MongoDB connection (runs once)
+
 let isDbConnected = false;
 async function connectDb() {
   if (!isDbConnected) {
@@ -41,6 +42,7 @@ async function connectDb() {
     }
   }
 }
+
 connectDb();
 
 app.get("/", (req, res) => {
@@ -55,9 +57,9 @@ app.use("/user", userRouter);
 app.use("/admin", adminRouter);
 app.use("/user/webhook/appointments", userRouter);
 
-// app.listen(PORT, () => {
-//   console.log(`Server is running on http://localhost:${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
 
 // ✅ Export serverless handler
-module.exports = serverless(app);
+// module.exports = serverless(app);
