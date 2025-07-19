@@ -963,7 +963,7 @@ exports.paymentSuccessCallbackUrlForAppointment = async (req, res) => {
 
 exports.paymentSuccessCallbackUrlForLabTest = async (req, res) => {
   try {
-    res.redirect("https://www.bookmydoct.com/bookedLabTest");
+    res.redirect("https://bookmydoct.com/bookedLabTest");
   } catch (error) {
     console.log(error);
     res
