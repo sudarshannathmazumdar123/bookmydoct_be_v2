@@ -166,6 +166,7 @@ exports.updateClinicDetails = async (req, res) => {
   try {
     let {
       name,
+      notes,
       email,
       addressOne,
       addressTwo,
@@ -215,6 +216,10 @@ exports.updateClinicDetails = async (req, res) => {
     }
     if (name) {
       clinic.name = name;
+    }
+
+    if (notes) {
+      clinic.notes = notes;
     }
 
     if (addressOne) {
@@ -333,6 +338,7 @@ exports.createDoctor = async (req, res) => {
   try {
     let {
       fullName,
+      doctorNotes,
       email,
       specialization,
       qualification,
@@ -464,6 +470,7 @@ exports.createDoctor = async (req, res) => {
 
     doctor = new Doctor({
       fullName,
+      doctorNotes,
       email: email,
       specialization,
       experience: experience || 0,
@@ -549,6 +556,7 @@ exports.updateDoctor = async (req, res) => {
   try {
     let {
       fullName,
+      doctorNotes,
       email,
       specialization,
       experience,
@@ -590,6 +598,7 @@ exports.updateDoctor = async (req, res) => {
     }
 
     if (fullName) doctor.fullName = fullName;
+    if (doctorNotes) doctor.doctorNotes = doctorNotes;
     if (specialization) doctor.specialization = specialization;
     if (qualification) doctor.medicalDegree = qualification;
     if (experience) {

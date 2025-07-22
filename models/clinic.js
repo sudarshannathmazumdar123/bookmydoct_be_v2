@@ -7,6 +7,9 @@ const clinicSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    notes: {
+      type: String,
+    },
     email: {
       type: String,
       required: true,

@@ -77,6 +77,7 @@ exports.signupForClinic = async (req, res) => {
   try {
     let {
       name,
+      notes,
       email,
       phoneNumber,
       addressOne,
@@ -92,6 +93,7 @@ exports.signupForClinic = async (req, res) => {
       latitude,
       longitude,
     } = req.body;
+
     if (
       !name ||
       !email ||
@@ -158,6 +160,7 @@ exports.signupForClinic = async (req, res) => {
 
     const clinic = new Clinic({
       name,
+      notes,
       email,
       phoneNumber,
       addressOne,
