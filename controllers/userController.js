@@ -303,11 +303,6 @@ exports.appointmentWebhook = async (req, res) => {
 
             await appointment.save();
 
-            res.status(201).json({
-              message: "Appointment created successfully",
-              appointment,
-            });
-
             const mailOptions = {
               from: process.env.MAIL_USERNAME,
               to: [process.env.ADMIN_EMAIL, clinicEmail],
@@ -350,6 +345,11 @@ exports.appointmentWebhook = async (req, res) => {
             };
 
             await transporter.sendMail(mailOptions);
+
+            res.status(201).json({
+              message: "Appointment created successfully",
+              appointment,
+            });
           }
       }
     }
